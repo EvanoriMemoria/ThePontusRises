@@ -3,6 +3,7 @@ package packerino;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Weighting {
 
@@ -39,7 +40,12 @@ public class Weighting {
 
     public static void main(String[] args) {
     	
-    	String input = readString("Please enter the severety level of the area or the term you would like defined.");
+    	System.out.println("Please enter the Severity of the area or the word you need defined.");
+    	Scanner scan = new Scanner(System.in);
+    	 
+    	// Reads a single line from the console 
+        // and stores into name variable
+        String inpu = scan.nextLine();
 
     	List<Weighting> stableWeightings = new ArrayList<Weighting>();
     	stableWeightings.add(new Weighting(0, 5));
@@ -63,6 +69,7 @@ public class Weighting {
     		stableTeirTwo.add(new Weighting(3, 9));
     		stableTeirTwo.add(new Weighting(4, 9));
     		stableTeirTwo.add(new Weighting(5, 20));
+    		System.out.println(weightedRandom(stableTeirTwo));
     	}
     	else if(stableWeight==0)
     	{
@@ -79,7 +86,7 @@ public class Weighting {
     	 * Print out the definitions of all the pontus events if they are typed into the prompt.
     	 */
     	
-    	if(input.equals("Disappearance"))
+    	if(inpu.equals("Disappearance"))
         {
     		System.out.println("Sometimes the Pontus devours parts of the Clockwork. The\n"
     				+ "Narrator deals a number of cards to each PC and NC equal\n"
