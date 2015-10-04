@@ -133,6 +133,12 @@ public class Weighting {
 		    		   + "the Borderlands. Other characters and objects are swallowed by\n"
 		    		   + "the Pontus and may eventually emerge as part of a chimera.\n");
 		}
+		
+		List<Weighting> impossibleEvents = new ArrayList<Weighting>();
+			impossibleEvents.add(new Weighting(2, 9));
+			impossibleEvents.add(new Weighting(3, 9));
+			impossibleEvents.add(new Weighting(4, 9));
+			impossibleEvents.add(new Weighting(6, 20));
 	}
 }
 
