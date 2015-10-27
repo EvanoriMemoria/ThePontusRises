@@ -1,18 +1,21 @@
 package packerino;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-public class TheMain{
-	public static void main(String[] args) {
-		Weighting oranges = new Weighting(5,10);
-		System.out.println(oranges);
-		
-
-	    List<Weighting> weightings = new ArrayList<Weighting>();
-	    weightings.add(new Weighting(5, 8));
-	    weightings.add(new Weighting(10, 1));
-	    weightings.add(new Weighting(20, 10));
- 	
+public class TheMain {
+	public static void main(String[] args){
+		while(true) {
+    	
+			System.out.println("Please enter the Severity of the area or the word you need defined.");
+			Scanner scan = new Scanner(System.in);
+	    	 
+			// Reads a single line from the console 
+		    // and stores into name variable
+		    String inpu = scan.nextLine();
+		    //scan.close(); //This just closes the scanner so it does not mem leak, but cannot be used again in the while
+		       
+		    stablerino.teired(inpu);
+		}
 	}
 }
+

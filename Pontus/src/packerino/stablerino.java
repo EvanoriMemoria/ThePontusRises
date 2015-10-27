@@ -2,43 +2,11 @@ package packerino;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public class Weighting {
+public class stablerino {
 
-    int value;
-    int weighting;
-
-    public Weighting(int v, int w) {
-        this.value = v;
-        this.weighting = w;
-    }
-
-    public static int weightedRandom(List<Weighting> weightingOptions) {
-
-    	//determine sum of all weightings
-    	int total = 0;
-    	for (Weighting w : weightingOptions) {
-    		total += w.weighting;
-    	}
-
-    	//select a random value between 0 and our total
-    	int random = new Random().nextInt(total);
-
-    	//loop thru our weightings until we arrive at the correct one
-    	int current = 0;
-    	for (Weighting w : weightingOptions) {
-    		current += w.weighting;
-    		if (random < current)
-    			return w.value;
-    	}
-
-    	//shouldn't happen.
-    	return -1;
-    }
-	   
-	/*public static void stablerino(String inpu) {
-	    	   
+	public static void teired(String inpu) {
+ 	   
 		if(inpu.equals("Stable")) {
 			List<Weighting> stableWeightings = new ArrayList<Weighting>();
 			stableWeightings.add(new Weighting(0, 5));
@@ -49,7 +17,7 @@ public class Weighting {
 			stableWeightings.add(new Weighting(5, 49));
 			stableWeightings.add(new Weighting(6, 24));
 			    	
-			int stableWeight = weightedRandom(stableWeightings);
+			int stableWeight = Weighting.weightedRandom(stableWeightings);
 			       
 			System.out.println("Stable Original: " + stableWeight);    	
 			       
@@ -71,14 +39,14 @@ public class Weighting {
 			/*This if loop triggers when the first pontus event is strange weather, 
 			* there is a chance for a second pontus event.
 			*/
-			/*else if(stableWeight==5) {
+			else if(stableWeight==5) {
 		 	   System.out.println("Impossible Weather: Major");
 		   	   List<Weighting> stableTeirTwo = new ArrayList<Weighting>();
 		   	   stableTeirTwo.add(new Weighting(2, 9));
 		   	   stableTeirTwo.add(new Weighting(3, 9));
 			   stableTeirTwo.add(new Weighting(4, 9));
 			   stableTeirTwo.add(new Weighting(6, 20));
-			   System.out.println(weightedRandom(stableTeirTwo));
+			   System.out.println(Weighting.weightedRandom(stableTeirTwo));
 			}
 			else if(stableWeight==6) {
 				System.out.println("Nothing happens!");
@@ -91,8 +59,8 @@ public class Weighting {
 		 	* Print out the definitions of all the pontus events if they are typed into the prompt.
 		  	*/
 		
-		//}
-		/*else if(inpu.equals("Disappearance")) {
+		}
+		else if(inpu.equals("Disappearance")) {
 		       System.out.println("Sometimes the Pontus devours parts of the Clockwork. The\n"
 		    		   + "Narrator deals a number of cards to each PC and NC equal\n"
 		    		   + "to their Corruption rank, and a single card to any other people,\n"
@@ -107,15 +75,6 @@ public class Weighting {
 		    		   + "the Borderlands. Other characters and objects are swallowed by\n"
 		    		   + "the Pontus and may eventually emerge as part of a chimera.\n");
 		}	
-	}*/
-	public static void majorImpEvent() {
-		Random randomGenerator = new Random();
-		int randomInt = randomGenerator.nextInt(100);
-		if(randomInt == 1) {
-			System.out.println("Momentum stops, everything instantly loses its momentum, including bullets.");
-		}
-		else if(randomInt == 2) {
-			
-		}
 	}
+
 }
